@@ -58,6 +58,3 @@ async def save_sentiment_endpoint(input_data: SentimentInput):
     label = sentiment_prediction.split()[0]
     await save_sentiment_to_database(input_data.text, label, sentiment_prediction)
     return {"mesaj": "Veriler başarıyla veritabanına kaydedildi."}
-
-if __name__ == "__main__":
-    app.run(port=8000)
